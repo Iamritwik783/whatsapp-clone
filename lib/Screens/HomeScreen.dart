@@ -8,7 +8,8 @@ class HomeScreen extends StatefulWidget {
   _HomeScreenState createState() => _HomeScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateMixin{
+class _HomeScreenState extends State<HomeScreen>
+    with SingleTickerProviderStateMixin {
   TabController? _controller;
 
   @override
@@ -24,16 +25,31 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
       appBar: AppBar(
         title: Text("WhatsApp"),
         actions: [
-          IconButton(onPressed: (){}, icon: Icon(Icons.search)),
-          PopupMenuButton(
-            onSelected: (val){print(val);},
-              itemBuilder: (context){
-              return [
-                PopupMenuItem(child: Text("New Group"), value: "New Group",),
-                PopupMenuItem(child: Text("New Broadcast"), value: "New Broadcast",),
-                PopupMenuItem(child: Text("WhatsApp Web"), value: "WhatsApp Web",),
-                PopupMenuItem(child: Text("Starred Messages"), value: "Starred Messages",),
-                PopupMenuItem(child: Text("Settings"), value: "Settings",),
+          IconButton(onPressed: () {}, icon: Icon(Icons.search)),
+          PopupMenuButton(onSelected: (val) {
+            print(val);
+          }, itemBuilder: (context) {
+            return [
+              PopupMenuItem(
+                child: Text("New Group"),
+                value: "New Group",
+              ),
+              PopupMenuItem(
+                child: Text("New Broadcast"),
+                value: "New Broadcast",
+              ),
+              PopupMenuItem(
+                child: Text("WhatsApp Web"),
+                value: "WhatsApp Web",
+              ),
+              PopupMenuItem(
+                child: Text("Starred Messages"),
+                value: "Starred Messages",
+              ),
+              PopupMenuItem(
+                child: Text("Settings"),
+                value: "Settings",
+              ),
             ];
           })
         ],
@@ -68,4 +84,3 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
     );
   }
 }
-
